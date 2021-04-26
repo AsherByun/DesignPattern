@@ -1,6 +1,10 @@
 package 로봇;
 
+import 생성패턴.전략패턴.Attack;
+
 public class IronRobot extends Robot {
+    Attack attack;
+
     @Override
     public void say() {
         System.out.println("i am 아이언맨");
@@ -8,6 +12,11 @@ public class IronRobot extends Robot {
 
     @Override
     public void attack() {
-        System.out.println("펄스건 발사 - 아이언맨");
+        attack.attack();
     }
+
+    public void setAttack(Attack attack) {
+        this.attack = attack;
+    }
+
 }

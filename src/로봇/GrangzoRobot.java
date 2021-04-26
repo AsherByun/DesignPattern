@@ -1,6 +1,9 @@
 package 로봇;
 
+import 생성패턴.전략패턴.Attack;
+
 public class GrangzoRobot extends Robot {
+    Attack attack;
     @Override
     public void say() {
         System.out.println("나는 그랑죠");
@@ -8,6 +11,11 @@ public class GrangzoRobot extends Robot {
 
     @Override
     public void attack() {
-        System.out.println("소드 어택 - 그랑죠");
+        attack.attack();
     }
+
+    public void setAttack(Attack attack) {
+        this.attack = attack;
+    }
+
 }
